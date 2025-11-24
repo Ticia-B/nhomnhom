@@ -23,11 +23,15 @@ public class Edible {
     @Column(name = "product_category", nullable = false)
     private ProductCategory productCategory;
 
+    @Column(name = "edible_photo", nullable = false)
+    private String ediblePhoto;
+
     @Column(name = "edible_price", length = 10, nullable = false)
     private BigDecimal ediblePrice;
 
-    public Edible(Long edibleId, String edbileName, String edbileDescription, ProductCategory productCategory, BigDecimal ediblePrice) {
+    public Edible(Long edibleId, String edbileName, String edbileDescription, ProductCategory productCategory, String ediblePhoto, BigDecimal ediblePrice) {
         this.edibleId = edibleId;
+        this.ediblePhoto = ediblePhoto;
         this.edibleName = edbileName;
         this.edibleDescription = edbileDescription;
         this.productCategory = productCategory;
@@ -39,7 +43,16 @@ public class Edible {
         edibleName = "";
         edibleDescription = "";
         productCategory = null;
+        ediblePhoto = "";
         ediblePrice = BigDecimal.ZERO;
+    }
+
+    public String getEdiblePhoto() {
+        return ediblePhoto;
+    }
+
+    public void setEdiblePhoto(String ediblePhoto) {
+        this.ediblePhoto = ediblePhoto;
     }
 
     public Long getEdibleId() {

@@ -3,35 +3,38 @@ package br.edu.ifpr.irati.ads.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @DiscriminatorValue("CLIENT")
 public class UserClient extends User {
-    @ManyToOne
-    @JoinColumn(name = "address_id", nullable = false)
-    private Address address;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @Column(name = "user_orders")
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @Column(name = "tb_user_orders")
     private List<Order> orders;
 
-    public UserClient(Long id, String name, String email, String password, LocalDate birthDate, String cpf, Address address) {
+    public UserClient(Long id, String name, String email, String password, LocalDate birthDate, String cpf, List<Order> orders) {
         super(id, name, email, password, birthDate, cpf);
-        this.address = address;
+        this.orders = orders;
     }
 
     public UserClient() {
         super();
-        address = new Address();
+        this.orders = new ArrayList<>();
+
     }
 
-    public Address getAddress() {
-        return address;
+    public void addOrder(Order order) {
+        this.orders.add(order);
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public List<Order> getOrders() {
+        return orders;
     }
 
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 }

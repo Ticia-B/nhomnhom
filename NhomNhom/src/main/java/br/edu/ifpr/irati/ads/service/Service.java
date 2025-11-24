@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import java.io.IOException;
 
 public interface Service {
+
     public void findById(HttpServletRequest req, HttpServletResponse resp, Session session)
             throws ServletException, IOException;
 

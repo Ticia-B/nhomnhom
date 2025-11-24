@@ -5,23 +5,23 @@ import jakarta.persistence.GenerationType;
 
 import java.time.LocalDate;
 
-@Entity(name="user")
+@Entity(name = "user")
 @Table(name = "tb_user")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "user_role", discriminatorType = DiscriminatorType.STRING)
 public abstract class User {
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name="user_name", length=100, nullable = false )
+    @Column(name = "user_name", length = 100, nullable = false)
     private String userName;
 
-    @Column(name ="user_email", length = 100, nullable = false, unique = true )
+    @Column(name = "user_email", length = 100, nullable = false, unique = true)
     private String userEmail;
 
-    @Column(name ="user_password", length = 20, nullable = false)
+    @Column(name = "user_password", length = 20, nullable = false)
     private String userPassword;
 
     @Column(name = "user_birth_date", length = 10)
@@ -48,11 +48,12 @@ public abstract class User {
         userCpf = "";
     }
 
-    public Long getId() {
+
+    public Long getUserId() {
         return userId;
     }
 
-    public void setId(Long id) {
+    public void setUserId(Long id) {
         this.userId = id;
     }
 

@@ -9,72 +9,75 @@ import org.hibernate.Transaction;
 import java.io.Serializable;
 import java.util.List;
 
-public class GenericDao <T> implements Dao<T> {
-    protected final Class persistentClass;
+public class GenericDao<T> implements Dao<T> {
+
+    protected final Class classePersistente;
     protected Session session;
 
-    public GenericDao(Class persistentClass, Session session) {
-        this.persistentClass = persistentClass;
+    public GenericDao(Class classePersistente, Session session) {
+        this.classePersistente = classePersistente;
         this.session = session;
     }
 
     @Override
     public T findById(Serializable id) throws PersistenceException {
-        T entity = null;
+        T t = null;
         try {
-            entity = (T) session.find(persistentClass, id);
-            return entity;
-        } catch(HibernateException he) {
-            throw new PersistenceException(he.getMessage());
-        }
-    }
-
-    @Override
-    public void save(T entity) throws PersistenceException {
-        Transaction transaction = null;
-        try{
-            transaction = session.beginTransaction();
-            session.persist(entity);
-            transaction.commit();
-        }catch (HibernateException | NullPointerException e){
+            t = (T) session.find(classePersistente, id);
+            return t;
+        } catch (HibernateException | NullPointerException e) {
             throw new PersistenceException(e.getMessage());
         }
     }
 
     @Override
-    public void update(T entity) throws PersistenceException {
+    public void save(T t) throws PersistenceException {
         Transaction transaction = null;
-        try{
+        try {
             transaction = session.beginTransaction();
-            session.merge(entity);
+            session.persist(t);
             transaction.commit();
-        }catch (HibernateException | NullPointerException e){
+        } catch (HibernateException | NullPointerException e) {
             throw new PersistenceException(e.getMessage());
         }
     }
 
     @Override
-    public void delete(T entity) throws PersistenceException {
+    public void update(T t) throws PersistenceException {
         Transaction transaction = null;
-        try{
+        try {
             transaction = session.beginTransaction();
-            session.remove(entity);
+            session.merge(t);
             transaction.commit();
-        }catch (HibernateException | NullPointerException e){
+        } catch (HibernateException | NullPointerException e) {
             throw new PersistenceException(e.getMessage());
         }
+    }
+
+    @Override
+    public void delete(T t) throws PersistenceException {
+
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.remove(t);
+            transaction.commit();
+        } catch (HibernateException | NullPointerException e) {
+            throw new PersistenceException(e.getMessage());
+        }
+
     }
 
     @Override
     public List<T> findAll() throws PersistenceException {
-        try{
-            String hql = "from " + this.persistentClass.getCanonicalName();
-            Query query = session.createQuery(hql, this.persistentClass);
+
+        try {
+            String hql = "from " + this.classePersistente.getCanonicalName();
+            Query query = session.createQuery(hql, this.classePersistente);
             List results = query.getResultList();
             return results;
-        }catch (HibernateException | NullPointerException e){
-                throw new PersistenceException(e.getMessage());
-            }
+        } catch (HibernateException | NullPointerException e) {
+            throw new PersistenceException(e.getMessage());
         }
     }
 }

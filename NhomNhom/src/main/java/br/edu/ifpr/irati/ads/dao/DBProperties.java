@@ -4,6 +4,7 @@ import jakarta.servlet.ServletContext;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class DBProperties {
@@ -25,6 +26,7 @@ public class DBProperties {
             properties = props;
         }
     }
+
     public static Properties getProperties(){
         return properties;
     }
