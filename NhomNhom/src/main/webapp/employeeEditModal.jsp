@@ -189,12 +189,12 @@
     }
 
     function closeEmployeeEditModal() {
-        if (!editEmployeeOverlay || !editEmployeeModalContent) return; // Prevenção de erro
+        if (!editEmployeeOverlay || !editEmployeeModalContent) return;
 
         editEmployeeOverlay.classList.add('bg-opacity-0');
         editEmployeeOverlay.classList.add('hidden');
         editEmployeeOverlay.classList.add('hidden');
-        editEmployeeOverlay.classList.remove('bg-opacity-0'); // Reset para próxima abertura
+        editEmployeeOverlay.classList.remove('bg-opacity-0');
 
     }
 

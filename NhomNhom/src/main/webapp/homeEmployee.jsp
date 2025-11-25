@@ -26,14 +26,17 @@
 </button>
 <c:import url="showingProductsAdmin.jsp"/>
 <c:import url="employeeNotificationModal.jsp"/>
+<c:import url="edibleEditModal.jsp"/>
+<script src="edibleEditModal.js"></script>
 
-<c:forEach items="${pageContext.session.attributeNames}" var="nomeAtributo">
-    <div style="margin-bottom: 10px;">
-        <strong>${nomeAtributo}</strong>
-        <br/>
-        <span>Valor:</span>
-        <span>${sessionScope[nomeAtributo]}</span>
-    </div>
-</c:forEach>
+
+<%--<c:forEach items="${pageContext.session.attributeNames}" var="nomeAtributo">--%>
+<%--    <div style="margin-bottom: 10px;">--%>
+<%--        <strong>${nomeAtributo}</strong>--%>
+<%--        <br/>--%>
+<%--        <span>Valor:</span>--%>
+<%--        <span>${sessionScope[nomeAtributo]}</span>--%>
+<%--    </div>--%>
+<%--</c:forEach>--%>
 </body>
 </html>

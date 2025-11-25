@@ -42,7 +42,7 @@
 
             <div id="logged" class="relative">
                 <button onclick="toggleProfileDropdown()"
-                        class="flex items-center gap-2 p-1 hover:bg-white hover:bg-yellow-800 rounded-full transition-all border-2 border-transparent focus:border-white">
+                        class="flex items-center gap-2 p-1 hover:bg-yellow-800 rounded-full transition-all border-2 border-transparent">
                     <div class="h-10 w-10 rounded-full bg-gradient-to-br from-violet-300 to-purple-600 flex items-center justify-center text-white font-black text-xl">
                         ${userLogged.userName.substring(0,2)}
                     </div>
@@ -148,4 +148,4 @@
 </header>
 <script src="showindUsersOrNo.js"></script>
 <script src="signInModalScript.js"></script>
-<script src="filterProduts.js"></script>
+<script src="filterProducts.js"></script>

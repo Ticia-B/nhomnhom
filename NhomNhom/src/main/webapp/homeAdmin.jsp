@@ -30,5 +30,7 @@
     <c:import url="showingUsers.jsp"/>
 </div>
 <c:import url="employeeNotificationModal.jsp"/>
+<c:import url="edibleEditModal.jsp"/>
+<script src="edibleEditModal.js"></script>
 </body>
 </html>

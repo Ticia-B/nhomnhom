@@ -229,7 +229,6 @@
         }, 300);
     }
 
-    // Fecha ao clicar fora
     modalEmployeeOverlay.addEventListener('click', (e) => {
         if (e.target === modalEmployeeOverlay || e.target === modalEmployeeContent) {
             closeClientEditModal();

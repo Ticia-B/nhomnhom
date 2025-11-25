@@ -17,16 +17,6 @@
 <body class="bg-orange-100" style="font-family: 'Comic Relief', sans-serif;">
 
 <c:import url="header.jsp"/>
-
-<c:forEach items="${pageContext.session.attributeNames}" var="nomeAtributo">
-    <div style="margin-bottom: 10px;">
-        <strong>${nomeAtributo}</strong>
-        <br/>
-        <span>Valor:</span>
-        <span>${sessionScope[nomeAtributo]}</span>
-    </div>
-</c:forEach>
-
 <div class="w-full flex justify-center relative z-20 pointer-events-none">
     <c:import url="minhom.jsp"/>
 </div>

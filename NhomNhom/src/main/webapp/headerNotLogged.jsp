@@ -351,4 +351,4 @@
     </div>
 </div>
 <script src="signInModalScript.js"></script>
-<script src="filterProduts.js"></script>
+<script src="filterProducts.js"></script>

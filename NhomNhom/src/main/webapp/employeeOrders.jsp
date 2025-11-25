@@ -17,13 +17,5 @@
 
 </head>
 <body>
-<c:forEach items="${pageContext.session.attributeNames}" var="nomeAtributo">
-    <div style="margin-bottom: 10px;">
-        <strong>${nomeAtributo}</strong>
-        <br/>
-        <span>Valor:</span>
-        <span>${sessionScope[nomeAtributo]}</span>
-    </div>
-</c:forEach>
 <c:import url="listOrdersAdmin.jsp"/>
 </body>

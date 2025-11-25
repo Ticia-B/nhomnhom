@@ -116,13 +116,6 @@
 
                                                 <div class="flex items-center gap-2">
 
-                                                    <c:if test="${orderUser.orderStatus == 'COMPLETED'}">
-                                                        <a href="cart?action=reorder&id=${orderUser.orderId}" class="px-5 py-2 bg-white border border-gray-200 text-gray-700 rounded-full font-bold text-xs shadow-sm hover:bg-amber-50 hover:text-amber-600 hover:border-amber-200 transition-all flex items-center gap-2">
-                                                            <i class="fa-solid fa-rotate-right"></i>
-                                                            Pedir de novo
-                                                        </a>
-                                                    </c:if>
-
                                                     <c:if test="${orderUser.orderStatus ne 'COMPLETED' and orderUser.orderStatus ne 'CANCELLED'}">
 
                                                             <a href="orderstatus/cancel?id=${orderUser.orderId}"
@@ -148,16 +141,13 @@
 </div>
 
 <script>
-    // Funções para abrir e fechar o Modal de Pedidos
     function openOrdersModal() {
         const overlay = document.getElementById('ordersModalOverlay');
         const modal = document.getElementById('ordersModal');
 
-        // Remove hidden e adiciona flex para centralizar
         overlay.classList.remove('hidden');
         modal.classList.remove('hidden');
 
-        // Trava o scroll do body atrás
         document.body.style.overflow = 'hidden';
     }
 
@@ -168,11 +158,9 @@
         overlay.classList.add('hidden');
         modal.classList.add('hidden');
 
-        // Destrava o scroll
         document.body.style.overflow = 'auto';
     }
 
-    // Fechar ao clicar fora (no overlay)
     document.getElementById('ordersModalOverlay').addEventListener('click', function(e) {
         if (e.target === this) {
             closeOrdersModal();

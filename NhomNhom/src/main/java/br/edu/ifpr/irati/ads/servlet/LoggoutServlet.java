@@ -1,4 +1,4 @@
-package br.edu.ifpr.irati.ads.servlet; // Ajuste para o seu pacote de servlets
+package br.edu.ifpr.irati.ads.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-// O link no seu HTML deve ser <a href="logout">Sair</a>
 @WebServlet(name = "loggoutservlet", urlPatterns = "/loggout")
 public class LoggoutServlet extends HttpServlet {
 
