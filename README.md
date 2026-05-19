@@ -1,12 +1,12 @@
 # NhomNhom
 
 ## Table of Contents
-1.  [About](#about)
+*  [About](#about)
   *  [Technical Requirements](#technical-requirements)
   *  [Key Features](#key-features)
   *  [Images](#images)
-2.  [Technologies Used](#technologies-used)
-3.  [How to Run](#how-to-run)
+*  [Technologies Used](#technologies-used)
+*  [How to Run](#how-to-run)
 
 --- 
 
