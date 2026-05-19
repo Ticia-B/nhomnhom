@@ -2,9 +2,9 @@
 
 ## Table of Contents
 1.  [About](#about)
-   *  [Technical Requirements](#technical-requirements)
-   *  [Key Features](#key-features)
-   *  [Images](#images)
+  *  [Technical Requirements](#technical-requirements)
+  *  [Key Features](#key-features)
+  *  [Images](#images)
 2.  [Technologies Used](#technologies-used)
 3.  [How to Run](#how-to-run)
 
@@ -26,8 +26,8 @@ The project was built to satisfy the following academic criteria:
 ### Key Features
 * Complete Order Lifecycle: Tracks orders through several statuses: Under Analysis, In Preparation, Ready for Pickup, Out for Delivery, and Finished.
 * Dual-Interface System:
-      *  **Customer Side:** Register, login, browse menu items (dishes and drinks), and monitor real-time order progress.
-      *  **Admin/Staff Side:** Manage menu catalog, validate incoming orders with justification for cancellations, and generate periodic sales reports.
+  *  **Customer Side:** Register, login, browse menu items (dishes and drinks), and monitor real-time order progress.
+  *  **Admin/Staff Side:** Manage menu catalog, validate incoming orders with justification for cancellations, and generate periodic sales reports.
 * Security: Secure authentication implemented using JWT (JSON Web Token).
 * Advanced Logic: Beyond standard CRUDs, the system features complex sales reporting and a dynamic order status validation engine.
 
