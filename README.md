@@ -2,9 +2,9 @@
 
 ## Table of Contents
 *  [About](#about)
-  *  [Technical Requirements](#technical-requirements)
-  *  [Key Features](#key-features)
-  *  [Images](#images)
+   *  [Technical Requirements](#technical-requirements)
+   *  [Key Features](#key-features)
+   *  [Images](#images)
 *  [Technologies Used](#technologies-used)
 *  [How to Run](#how-to-run)
 
